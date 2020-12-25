@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <title>U.S. Time Zones</title>
+</head>
+<body class="bg-image">
+    <header>
+        <div id="nav">
+            <ul class="time-zones">
+                <li><a href="./index.html" class="est">Eastern Time Zone (EST)</a></li>
+                <li><a href="./central.html" class="cst">Central Time Zone (CST)</a></li>
+                <li><a href="./mountain.html" class="mst">Mountain Time Zone (MST)</a></li>
+                <li><a href="./pacific.html" class="pst">Pacific Time Zone (PST)</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div class="time-container">
+            <h1 id="pacific" class="pst"></h1>        
+        </div>        
+    </main>
+    <footer class="pst">
+        <h3>Created by D'Andre Campbell, 2020</h3>
+    </footer>
+    <script src="./lib/moment/moment.js"></script>
+    <script src="./lib/moment/moment-timezone-with-data.js"></script>
+    <script>
+        setInterval(pc, 1000);
+
+        function pc() {
+            const pacific = moment.tz("America/Los_Angeles").format("HH:mm:ss");
+            document.getElementById("pacific").innerHTML = pacific;          
+        }
+    </script>
+</body>
+</html>
